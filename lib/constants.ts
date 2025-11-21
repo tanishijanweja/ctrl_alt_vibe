@@ -548,7 +548,7 @@ export const ALL_INGREDIENTS: Ingredient[] = [
     {
         id: "black-beans",
         name: "black beans",
-        synonyms: [],
+        synonyms: ["beans"],
         foodGroup: "legume",
         containsAnimal: false,
         animalType: null,
@@ -580,6 +580,18 @@ export const ALL_INGREDIENTS: Ingredient[] = [
         isVegetarian: true,
         isPescatarian: true,
         commonIn: ["asian"],
+    },
+    {
+        id: "wheat",
+        name: "wheat",
+        synonyms: ["aata", "maida", "macaroni", "noodles"],
+        foodGroup: "grain",
+        containsAnimal: false,
+        animalType: null,
+        isVegan: true,
+        isVegetarian: true,
+        isPescatarian: true,
+        commonIn: ["western", "indian"],
     },
 
     // --- Meat & Poultry ---
