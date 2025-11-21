@@ -10,8 +10,7 @@ import { Badge } from "@/app/components/ui/Badge";
 import { Check, ChevronRight, Leaf, Sparkles, Target } from "lucide-react";
 
 const STEPS = ["Welcome", "Diet", "Goals", "Pantry"];
-
-const DIETS = ["Omnivore", "Vegetarian", "Vegan", "Keto", "Paleo"];
+const DIETS = ["Vegetarian", "Omnivore", "Vegan", "Eggetarian", "Pescatarian"];
 const GOALS = ["Save Money", "Eat Healthy", "Reduce Waste", "Learn to Cook"];
 const COMMON_PANTRY = ["Rice", "Pasta", "Beans", "Tomatoes", "Onions", "Garlic", "Olive Oil", "Salt", "Pepper"];
 

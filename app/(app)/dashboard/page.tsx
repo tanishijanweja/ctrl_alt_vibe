@@ -97,15 +97,21 @@ export default function DashboardPage() {
                     <CardHeader className="pt-6 px-8">
                         <CardTitle className="text-xl font-bold text-foreground/80">Weekly Activity</CardTitle>
                     </CardHeader>
-                    <CardContent className="px-8 pb-8">
-                        <div className="h-72 flex items-end justify-between gap-4 pt-8">
-                            {/* Placeholder for cleaner line chart visualization using CSS shapes */}
-                            <div className="w-full h-full relative flex items-end justify-between px-4">
-                                {/* Background Grid Lines */}
-                                <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-30">
-                                    {[...Array(5)].map((_, i) => (
-                                        <div key={i} className="w-full h-px bg-border border-dashed" />
-                                    ))}
+                    <CardContent>
+                        <div className="h-64 flex items-end justify-between gap-2 pt-4">
+                            {[65, 40, 75, 50, 85, 90, 60].map((h, i) => (
+                                <div key={i} className="flex-1 flex flex-col items-center gap-2 group h-full justify-end">
+                                    <div
+                                        className="w-full bg-primary/20 rounded-t-lg transition-all duration-500 group-hover:bg-primary/40 relative"
+                                        style={{ height: `${h}%` }}
+                                    >
+                                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-card border border-border px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                            {h}% Goal
+                                        </div>
+                                    </div>
+                                    <span className="text-xs text-muted-foreground">
+                                        {["M", "T", "W", "T", "F", "S", "S"][i]}
+                                    </span>
                                 </div>
 
                                 {/* Bars (kept as bars but cleaner, per "clean line chart placeholder" request I will make them very thin rounded bars to mimic a clean look, or actual SVG line if I could, but sticking to CSS bars is safer for now unless I use a library. User asked for "clean line chart placeholder". I'll simulate a line chart with SVG points and lines if possible, or just very clean bars. Let's stick to the previous implementation but refined as requested "clean line chart placeholder" - I will use a simple SVG polyline for a true line chart look). */}
