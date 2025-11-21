@@ -101,7 +101,7 @@ export default function DashboardPage() {
                     <CardContent>
                         <div className="h-64 flex items-end justify-between gap-2 pt-4">
                             {[65, 40, 75, 50, 85, 90, 60].map((h, i) => (
-                                <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
+                                <div key={i} className="flex-1 flex flex-col items-center gap-2 group h-full justify-end">
                                     <div
                                         className="w-full bg-primary/20 rounded-t-lg transition-all duration-500 group-hover:bg-primary/40 relative"
                                         style={{ height: `${h}%` }}
