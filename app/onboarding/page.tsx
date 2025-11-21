@@ -54,7 +54,7 @@ export default function OnboardingPage() {
                 <Card className="glass-panel border-white/10 animate-slide-up">
                     <CardHeader>
                         <CardTitle className="text-3xl text-center">
-                            {step === 0 && "Welcome to MealAI"}
+                            {step === 0 && "Welcome to Rasoyee"}
                             {step === 1 && "Dietary Preferences"}
                             {step === 2 && "Your Goals"}
                             {step === 3 && "Quick Pantry Setup"}

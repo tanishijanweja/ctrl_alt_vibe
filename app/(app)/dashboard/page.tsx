@@ -10,93 +10,92 @@ export default function DashboardPage() {
     const { preferences } = useUser();
 
     return (
-        <div className="space-y-8">
-            <div className="flex items-center justify-between">
-                <div>
-                    <h1 className="text-3xl font-bold">
-                        Hello, {preferences.name || "Chef"}! 👋
+        <div className="space-y-12">
+            {/* Header */}
+            <div className="flex items-center justify-between pt-2">
+                <div className="space-y-2">
+                    <h1 className="text-4xl font-bold tracking-tight text-foreground">
+                        Hello, {preferences.name || "Chef"}!
                     </h1>
-                    <p className="text-muted-foreground">Here's your impact summary.</p>
+                    <p className="text-lg text-muted-foreground">Here's what's happening in your kitchen today.</p>
                 </div>
                 <Link href="/planner">
-                    <Button className="gap-2 shadow-lg shadow-primary/20">
+                    <Button size="lg" className="h-14 px-8 rounded-full bg-gradient-to-r from-orange-400 to-orange-300 hover:from-orange-500 hover:to-orange-400 text-white shadow-lg shadow-orange-200 hover:shadow-orange-300 transition-all duration-300 text-base font-semibold tracking-wide">
                         Generate Meal Plan
-                        <Sparkles className="w-4 h-4" />
+                        <Sparkles className="w-5 h-5 ml-2" />
                     </Button>
                 </Link>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="glass-panel border-emerald-500/20 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                        <Leaf className="w-24 h-24" />
-                    </div>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <Leaf className="w-5 h-5 text-emerald-500" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="border-none rounded-[2rem] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 p-2">
+                    <CardHeader className="pb-2 pt-6 px-8">
+                        <CardTitle className="flex items-center gap-3 text-lg font-semibold text-muted-foreground/80">
+                            <div className="p-2 bg-emerald-50 rounded-xl">
+                                <Leaf className="w-4 h-4 text-emerald-500" />
+                            </div>
                             Waste Saved
                         </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        <div className="text-4xl font-bold text-emerald-400 mb-1">
-                            2.4 kg
+                    <CardContent className="px-8 pb-8">
+                        <div className="text-5xl font-bold text-foreground mb-3 tracking-tight">
+                            2.4 <span className="text-2xl text-muted-foreground font-medium">kg</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">This month</p>
-                        <div className="mt-4 h-2 bg-secondary rounded-full overflow-hidden">
-                            <div className="h-full bg-emerald-500 w-[70%]" />
+                        <div className="flex items-center gap-2 text-sm font-medium">
+                            <span className="text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">+12%</span>
+                            <span className="text-muted-foreground/80">from last month</span>
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card className="glass-panel border-amber-500/20 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                        <DollarSign className="w-24 h-24" />
-                    </div>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <DollarSign className="w-5 h-5 text-amber-500" />
+                <Card className="border-none rounded-[2rem] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 p-2">
+                    <CardHeader className="pb-2 pt-6 px-8">
+                        <CardTitle className="flex items-center gap-3 text-lg font-semibold text-muted-foreground/80">
+                            <div className="p-2 bg-amber-50 rounded-xl">
+                                <DollarSign className="w-4 h-4 text-amber-500" />
+                            </div>
                             Money Saved
                         </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        <div className="text-4xl font-bold text-amber-400 mb-1">
+                    <CardContent className="px-8 pb-8">
+                        <div className="text-5xl font-bold text-foreground mb-3 tracking-tight">
                             $145
                         </div>
-                        <p className="text-sm text-muted-foreground">Estimated savings</p>
-                        <div className="mt-4 h-2 bg-secondary rounded-full overflow-hidden">
-                            <div className="h-full bg-amber-500 w-[45%]" />
+                        <div className="flex items-center gap-2 text-sm font-medium">
+                            <span className="text-amber-600 bg-amber-50 px-3 py-1 rounded-full">On track</span>
+                            <span className="text-muted-foreground/80">to save $200</span>
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card className="glass-panel border-blue-500/20 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                        <TrendingUp className="w-24 h-24" />
-                    </div>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <TrendingUp className="w-5 h-5 text-blue-500" />
+                <Card className="border-none rounded-[2rem] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 p-2">
+                    <CardHeader className="pb-2 pt-6 px-8">
+                        <CardTitle className="flex items-center gap-3 text-lg font-semibold text-muted-foreground/80">
+                            <div className="p-2 bg-blue-50 rounded-xl">
+                                <TrendingUp className="w-4 h-4 text-blue-500" />
+                            </div>
                             Health Score
                         </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        <div className="text-4xl font-bold text-blue-400 mb-1">
+                    <CardContent className="px-8 pb-8">
+                        <div className="text-5xl font-bold text-foreground mb-3 tracking-tight">
                             92
                         </div>
-                        <p className="text-sm text-muted-foreground">Based on recent meals</p>
-                        <div className="mt-4 h-2 bg-secondary rounded-full overflow-hidden">
-                            <div className="h-full bg-blue-500 w-[92%]" />
+                        <div className="flex items-center gap-2 text-sm font-medium">
+                            <span className="text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Excellent</span>
+                            <span className="text-muted-foreground/80">Top 5% of users</span>
                         </div>
                     </CardContent>
                 </Card>
             </div>
 
-            {/* Activity Chart Area */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <Card className="glass-panel">
-                    <CardHeader>
-                        <CardTitle>Weekly Activity</CardTitle>
+            {/* Activity Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Weekly Activity - Spans 2 columns */}
+                <Card className="lg:col-span-2 border-none rounded-[2rem] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] p-2">
+                    <CardHeader className="pt-6 px-8">
+                        <CardTitle className="text-xl font-bold text-foreground/80">Weekly Activity</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="h-64 flex items-end justify-between gap-2 pt-4">
@@ -114,29 +113,61 @@ export default function DashboardPage() {
                                         {["M", "T", "W", "T", "F", "S", "S"][i]}
                                     </span>
                                 </div>
-                            ))}
+
+                                {/* Bars (kept as bars but cleaner, per "clean line chart placeholder" request I will make them very thin rounded bars to mimic a clean look, or actual SVG line if I could, but sticking to CSS bars is safer for now unless I use a library. User asked for "clean line chart placeholder". I'll simulate a line chart with SVG points and lines if possible, or just very clean bars. Let's stick to the previous implementation but refined as requested "clean line chart placeholder" - I will use a simple SVG polyline for a true line chart look). */}
+                                <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#F9B74D" stopOpacity="0.5" />
+                                            <stop offset="100%" stopColor="#F9B74D" stopOpacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path
+                                        d="M0,180 L50,200 L150,100 L250,150 L350,50 L450,30 L550,120 L650,180"
+                                        fill="none"
+                                        stroke="#F9B74D"
+                                        strokeWidth="4"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="drop-shadow-lg"
+                                        style={{ vectorEffect: "non-scaling-stroke" }}
+                                    />
+                                    <path
+                                        d="M0,180 L50,200 L150,100 L250,150 L350,50 L450,30 L550,120 L650,180 V300 H0 Z"
+                                        fill="url(#lineGradient)"
+                                        className="opacity-20"
+                                        style={{ vectorEffect: "non-scaling-stroke" }}
+                                    />
+                                </svg>
+
+                                {/* X-Axis Labels */}
+                                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-sm text-muted-foreground font-medium translate-y-8">
+                                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                                </div>
+                            </div>
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card className="glass-panel">
-                    <CardHeader>
-                        <CardTitle>Recent Activity</CardTitle>
+                {/* Recent Activity */}
+                <Card className="border-none rounded-[2rem] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] p-2">
+                    <CardHeader className="pt-6 px-8">
+                        <CardTitle className="text-xl font-bold text-foreground/80">Recent Activity</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="px-8 pb-8 space-y-8">
                         {[
-                            { text: "Added Quinoa to pantry", time: "2h ago", icon: "🥗" },
-                            { text: "Planned meals for the week", time: "5h ago", icon: "📅" },
-                            { text: "Shared lemons with community", time: "1d ago", icon: "🍋" },
-                            { text: "Completed onboarding", time: "1d ago", icon: "✨" },
+                            { text: "Added Quinoa to pantry", time: "2h ago", icon: "🥗", bg: "bg-emerald-50 text-emerald-600" },
+                            { text: "Planned meals for the week", time: "5h ago", icon: "📅", bg: "bg-blue-50 text-blue-600" },
+                            { text: "Shared lemons with community", time: "1d ago", icon: "🍋", bg: "bg-amber-50 text-amber-600" },
+                            { text: "Completed onboarding", time: "1d ago", icon: "✨", bg: "bg-purple-50 text-purple-600" },
                         ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
-                                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-lg">
+                            <div key={i} className="flex items-center gap-5 group cursor-pointer">
+                                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0 ${item.bg} group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                                     {item.icon}
                                 </div>
-                                <div className="flex-1">
-                                    <p className="font-medium text-sm">{item.text}</p>
-                                    <p className="text-xs text-muted-foreground">{item.time}</p>
+                                <div className="flex-1 py-1">
+                                    <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.text}</p>
+                                    <p className="text-sm text-muted-foreground mt-1 font-medium">{item.time}</p>
                                 </div>
                             </div>
                         ))}
