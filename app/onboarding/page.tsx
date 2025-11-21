@@ -41,8 +41,8 @@ export default function OnboardingPage() {
                         <div key={s} className="flex flex-col items-center gap-2">
                             <div
                                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${i <= step
-                                        ? "bg-primary text-primary-foreground scale-110 shadow-lg shadow-primary/25"
-                                        : "bg-secondary text-secondary-foreground"
+                                    ? "bg-primary text-primary-foreground scale-110 shadow-lg shadow-primary/25"
+                                    : "bg-secondary text-secondary-foreground"
                                     }`}
                             >
                                 {i + 1}
@@ -55,7 +55,7 @@ export default function OnboardingPage() {
                 <Card className="glass-panel border-white/10 animate-slide-up">
                     <CardHeader>
                         <CardTitle className="text-3xl text-center">
-                            {step === 0 && "Welcome to MealAI"}
+                            {step === 0 && "Welcome to Rasoyee"}
                             {step === 1 && "Dietary Preferences"}
                             {step === 2 && "Your Goals"}
                             {step === 3 && "Quick Pantry Setup"}
@@ -94,8 +94,8 @@ export default function OnboardingPage() {
                                         key={diet}
                                         onClick={() => updatePreferences({ diet: diet as any })}
                                         className={`p-4 rounded-xl border-2 transition-all text-left hover:scale-[1.02] ${preferences.diet === diet
-                                                ? "border-primary bg-primary/10 shadow-lg shadow-primary/10"
-                                                : "border-transparent bg-secondary/50 hover:bg-secondary"
+                                            ? "border-primary bg-primary/10 shadow-lg shadow-primary/10"
+                                            : "border-transparent bg-secondary/50 hover:bg-secondary"
                                             }`}
                                     >
                                         <div className="flex justify-between items-center">
@@ -121,8 +121,8 @@ export default function OnboardingPage() {
                                                 updatePreferences({ goals: newGoals as any });
                                             }}
                                             className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${isSelected
-                                                    ? "border-primary bg-primary/10"
-                                                    : "border-transparent bg-secondary/50 hover:bg-secondary"
+                                                ? "border-primary bg-primary/10"
+                                                : "border-transparent bg-secondary/50 hover:bg-secondary"
                                                 }`}
                                         >
                                             <div className={`p-2 rounded-full ${isSelected ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"}`}>

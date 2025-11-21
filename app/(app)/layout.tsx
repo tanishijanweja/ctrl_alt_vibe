@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Refrigerator, CalendarDays, Users, LogOut, ShoppingCart } from "lucide-react";
+import { LayoutDashboard, Refrigerator, CalendarDays, Users, ShoppingCart, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -17,43 +17,44 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
     return (
-        <div className="min-h-screen flex bg-background">
-            {/* Sidebar */}
-            <aside className="w-64 border-r border-border bg-card/50 hidden md:flex flex-col fixed h-full">
-                <div className="p-6">
-                    <h1 className="text-2xl font-bold text-gradient">MealAI</h1>
-                </div>
+        <div className="min-h-screen bg-background flex flex-col">
+            {/* Top Navigation */}
+            <header className="fixed top-0 left-0 right-0 h-16 bg-background/80 backdrop-blur-md border-b border-border z-50">
+                <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+                    {/* Logo */}
+                    <div className="flex-shrink-0">
+                        <h1 className="text-2xl font-bold tracking-tight text-foreground">Rasoyee</h1>
+                    </div>
 
-                <nav className="flex-1 px-4 space-y-2">
-                    {NAV_ITEMS.map((item) => {
-                        const isActive = pathname === item.href;
-                        return (
-                            <Link key={item.href} href={item.href}>
-                                <div
-                                    className={cn(
-                                        "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200",
-                                        isActive
-                                            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                                            : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                                    )}
-                                >
-                                    <item.icon className="w-5 h-5" />
-                                    <span className="font-medium">{item.label}</span>
-                                </div>
-                            </Link>
-                        );
-                    })}
-                </nav>
+                    {/* Center Navigation */}
+                    <nav className="hidden md:flex items-center gap-1">
+                        {NAV_ITEMS.map((item) => {
+                            const isActive = pathname === item.href;
+                            return (
+                                <Link key={item.href} href={item.href}>
+                                    <div
+                                        className={cn(
+                                            "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                                            isActive
+                                                ? "bg-primary/10 text-primary"
+                                                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                                        )}
+                                    >
+                                        {item.label}
+                                    </div>
+                                </Link>
+                            );
+                        })}
+                    </nav>
 
-                <div className="p-4">
-                    <Link href="/">
-                        <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors cursor-pointer">
-                            <LogOut className="w-5 h-5" />
-                            <span className="font-medium">Sign Out</span>
-                        </div>
-                    </Link>
+                    {/* Right Profile */}
+                    <div className="flex items-center gap-4">
+                        <button className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
+                            <User className="w-5 h-5" />
+                        </button>
+                    </div>
                 </div>
-            </aside>
+            </header>
 
             {/* Mobile Nav (Bottom) */}
             <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-card border-t border-border z-50 pb-safe">
@@ -78,8 +79,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </nav>
 
             {/* Main Content */}
-            <main className="flex-1 md:pl-64 pb-20 md:pb-0">
-                <div className="max-w-6xl mx-auto p-6 animate-fade-in">
+            <main className="flex-1 pt-24 pb-20 md:pb-10">
+                <div className="max-w-7xl mx-auto px-6 animate-fade-in">
                     {children}
                 </div>
             </main>

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MealAI - Smart Meal Planning",
+  title: "Rasoyee - Smart Meal Planning",
   description: "Reduce waste, save money, and eat better with AI.",
 };
 

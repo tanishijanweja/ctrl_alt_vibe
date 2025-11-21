@@ -38,7 +38,53 @@
 }
 
 :root {
-  /* Premium Color Palette - Deep Greens & Vibrant Accents */
+  /* Luxury Minimal Theme (Default) */
+  --background: #ffffff;
+  /* Pure White */
+  --foreground: #2A2E32;
+  /* Dark Slate Grey */
+
+  --card: #F5F5F7;
+  /* Soft Grey */
+  --card-foreground: #2A2E32;
+
+  --popover: #ffffff;
+  --popover-foreground: #2A2E32;
+
+  --primary: #F9B74D;
+  /* Luxurious Amber */
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffffff;
+  /* White */
+  --secondary-foreground: #F9B74D;
+
+  --muted: #F5F5F7;
+  /* Soft Grey */
+  --muted-foreground: #86868b;
+  /* Grey */
+
+  --accent: #FFCC73;
+  /* Gold Accent */
+  --accent-foreground: #2A2E32;
+
+  --destructive: #FF3B30;
+  --destructive-foreground: #ffffff;
+
+  --border: #E5E5EA;
+  /* Very Light Grey */
+  --input: #E5E5EA;
+  --ring: #F9B74D;
+
+  --radius: 1.5rem;
+  /* Very smooth rounded */
+
+  --bg-gradient: radial-gradient(circle at top left, rgba(249, 183, 77, 0.03), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255, 204, 115, 0.05), transparent 40%);
+}
+
+.dark {
+  /* Premium Dark Theme */
   --background: #0f172a;
   /* Slate 900 */
   --foreground: #f8fafc;
@@ -75,7 +121,8 @@
   --input: #334155;
   --ring: #10b981;
 
-  --radius: 0.75rem;
+  --bg-gradient: radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.1), transparent 40%);
 }
 
 @layer base {
@@ -85,8 +132,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    background-image: radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), transparent 40%),
-      radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.1), transparent 40%);
+    background-image: var(--bg-gradient);
     background-attachment: fixed;
   }
 }
@@ -97,7 +143,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F9B74D] to-[#FFCC73];
   }
 
   .animate-fade-in {
