@@ -33,7 +33,7 @@ export default function Home() {
               </Button>
             </Link>
             <SignInButton mode="modal" forceRedirectUrl="/dashboard">
-              <Button variant="outline" size="lg" className="text-lg px-8 h-14 rounded-2xl hover:bg-secondary/50">
+              <Button variant="outline" size="lg" className="text-lg px-8 h-14 rounded-2xl">
                 I have an account
               </Button>
             </SignInButton>
