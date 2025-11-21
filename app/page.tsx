@@ -1,3 +1,4 @@
+import { SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/Button";
 import { ArrowRight, Leaf, Sparkles, TrendingUp } from "lucide-react";
@@ -31,11 +32,11 @@ export default function Home() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/login">
+            <SignInButton mode="modal" forceRedirectUrl="/dashboard">
               <Button variant="outline" size="lg" className="text-lg px-8 h-14 rounded-2xl hover:bg-secondary/50">
                 I have an account
               </Button>
-            </Link>
+            </SignInButton>
           </div>
         </div>
 
