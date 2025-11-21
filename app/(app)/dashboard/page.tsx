@@ -98,7 +98,7 @@ export default function DashboardPage() {
                         <CardTitle className="text-xl font-bold text-foreground/80">Weekly Activity</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <div className="h-64 flex items-end justify-between gap-2 pt-4">
+                        <div className="h-64 flex items-end justify-between gap-2 pt-4 relative">
                             {[65, 40, 75, 50, 85, 90, 60].map((h, i) => (
                                 <div key={i} className="flex-1 flex flex-col items-center gap-2 group h-full justify-end">
                                     <div
@@ -113,38 +113,9 @@ export default function DashboardPage() {
                                         {["M", "T", "W", "T", "F", "S", "S"][i]}
                                     </span>
                                 </div>
+                            ))}
 
-                                {/* Bars (kept as bars but cleaner, per "clean line chart placeholder" request I will make them very thin rounded bars to mimic a clean look, or actual SVG line if I could, but sticking to CSS bars is safer for now unless I use a library. User asked for "clean line chart placeholder". I'll simulate a line chart with SVG points and lines if possible, or just very clean bars. Let's stick to the previous implementation but refined as requested "clean line chart placeholder" - I will use a simple SVG polyline for a true line chart look). */}
-                                <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor="#F9B74D" stopOpacity="0.5" />
-                                            <stop offset="100%" stopColor="#F9B74D" stopOpacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        d="M0,180 L50,200 L150,100 L250,150 L350,50 L450,30 L550,120 L650,180"
-                                        fill="none"
-                                        stroke="#F9B74D"
-                                        strokeWidth="4"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="drop-shadow-lg"
-                                        style={{ vectorEffect: "non-scaling-stroke" }}
-                                    />
-                                    <path
-                                        d="M0,180 L50,200 L150,100 L250,150 L350,50 L450,30 L550,120 L650,180 V300 H0 Z"
-                                        fill="url(#lineGradient)"
-                                        className="opacity-20"
-                                        style={{ vectorEffect: "non-scaling-stroke" }}
-                                    />
-                                </svg>
 
-                                {/* X-Axis Labels */}
-                                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-sm text-muted-foreground font-medium translate-y-8">
-                                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-                                </div>
-                            </div>
                         </div>
                     </CardContent>
                 </Card>
