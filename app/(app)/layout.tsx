@@ -13,6 +13,8 @@ const NAV_ITEMS = [
     { label: "Community", href: "/community", icon: Users },
 ];
 
+import { UserButton } from "@clerk/nextjs";
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
@@ -49,9 +51,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
                     {/* Right Profile */}
                     <div className="flex items-center gap-4">
-                        <button className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
-                            <User className="w-5 h-5" />
-                        </button>
+                        <UserButton afterSignOutUrl="/" />
                     </div>
                 </div>
             </header>
