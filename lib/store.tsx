@@ -1,13 +1,13 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { DietProfile } from "./constants";
 
-type DietType = "Omnivore" | "Vegetarian" | "Vegan" | "Keto" | "Paleo";
 type GoalType = "Save Money" | "Eat Healthy" | "Reduce Waste" | "Learn to Cook";
 
 interface UserPreferences {
     name: string;
-    diet: DietType;
+    diet: DietProfile;
     allergies: string[];
     goals: GoalType[];
     pantryItems: string[];
@@ -23,7 +23,7 @@ interface UserContextType {
 
 const defaultPreferences: UserPreferences = {
     name: "",
-    diet: "Omnivore",
+    diet: "omnivore",
     allergies: [],
     goals: [],
     pantryItems: [],
