@@ -10,8 +10,7 @@ import { Badge } from "@/app/components/ui/Badge";
 import { Check, ChevronRight, Leaf, Sparkles, Target } from "lucide-react";
 
 const STEPS = ["Welcome", "Diet", "Goals", "Pantry"];
-
-const DIETS = ["Omnivore", "Vegetarian", "Vegan", "Keto", "Paleo"];
+const DIETS = ["Vegetarian", "Non-Vegetarian", "Vegan", "Keto", "Paleo", "Pescetarian"];
 const GOALS = ["Save Money", "Eat Healthy", "Reduce Waste", "Learn to Cook"];
 const COMMON_PANTRY = ["Rice", "Pasta", "Beans", "Tomatoes", "Onions", "Garlic", "Olive Oil", "Salt", "Pepper"];
 
@@ -41,8 +40,8 @@ export default function OnboardingPage() {
                         <div key={s} className="flex flex-col items-center gap-2">
                             <div
                                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 ${i <= step
-                                        ? "bg-primary text-primary-foreground scale-110 shadow-lg shadow-primary/25"
-                                        : "bg-secondary text-secondary-foreground"
+                                    ? "bg-primary text-primary-foreground scale-110 shadow-lg shadow-primary/25"
+                                    : "bg-secondary text-secondary-foreground"
                                     }`}
                             >
                                 {i + 1}
@@ -94,8 +93,8 @@ export default function OnboardingPage() {
                                         key={diet}
                                         onClick={() => updatePreferences({ diet: diet as any })}
                                         className={`p-4 rounded-xl border-2 transition-all text-left hover:scale-[1.02] ${preferences.diet === diet
-                                                ? "border-primary bg-primary/10 shadow-lg shadow-primary/10"
-                                                : "border-transparent bg-secondary/50 hover:bg-secondary"
+                                            ? "border-primary bg-primary/10 shadow-lg shadow-primary/10"
+                                            : "border-transparent bg-secondary/50 hover:bg-secondary"
                                             }`}
                                     >
                                         <div className="flex justify-between items-center">
@@ -121,8 +120,8 @@ export default function OnboardingPage() {
                                                 updatePreferences({ goals: newGoals as any });
                                             }}
                                             className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${isSelected
-                                                    ? "border-primary bg-primary/10"
-                                                    : "border-transparent bg-secondary/50 hover:bg-secondary"
+                                                ? "border-primary bg-primary/10"
+                                                : "border-transparent bg-secondary/50 hover:bg-secondary"
                                                 }`}
                                         >
                                             <div className={`p-2 rounded-full ${isSelected ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"}`}>
