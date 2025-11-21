@@ -19,12 +19,6 @@ export default function DashboardPage() {
                     </h1>
                     <p className="text-lg text-muted-foreground">Here's what's happening in your kitchen today.</p>
                 </div>
-                <Link href="/planner">
-                    <Button size="lg" className="h-14 px-8 rounded-full bg-gradient-to-r from-orange-400 to-orange-300 hover:from-orange-500 hover:to-orange-400 text-white shadow-lg shadow-orange-200 hover:shadow-orange-300 transition-all duration-300 text-base font-semibold tracking-wide">
-                        Generate Meal Plan
-                        <Sparkles className="w-5 h-5 ml-2" />
-                    </Button>
-                </Link>
             </div>
 
             {/* Stats Grid */}
